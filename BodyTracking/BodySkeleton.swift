@@ -46,13 +46,14 @@ class BodySkeleton: Entity {
             joints[jointName] = jointEntity
             self.addChild(jointEntity)
             
-            for bone in Bones.allCases {
-                guard let skeletonBone = createSkeletonBone(bone: bone, bodyAnchor: bodyAnchor)
-                    else { continue }
-                let boneEntity = createBoneEntity(for: skeletonBone)
-                bones[bone.name] = boneEntity
-                self.addChild(boneEntity)
-            }
+            
+        }
+        for bone in Bones.allCases {
+            guard let skeletonBone = createSkeletonBone(bone: bone, bodyAnchor: bodyAnchor)
+                else { continue }
+            let boneEntity = createBoneEntity(for: skeletonBone)
+            bones[bone.name] = boneEntity
+            self.addChild(boneEntity)
         }
     }
     
