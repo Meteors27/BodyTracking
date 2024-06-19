@@ -7,24 +7,39 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct StartView: View {
     var body: some View {
         NavigationStack {
-          VStack {
-            Image(systemName: "camera.metering.matrix")
-              .imageScale(.large)
-              .foregroundColor(.accentColor)
-            Text("Roomscanner").font(.title)
-            Spacer().frame(height: 40)
-            Text("Scan the room by pointing the camera at all surfaces. Model export supports usdz format.")
-            Spacer().frame(height: 40)
-            NavigationLink(destination: ScanningView(), label: {Text("Start Scan")}).buttonStyle(.borderedProminent).cornerRadius(40).font(.title2)
-          }
+            ZStack {
+                VStack {
+                Image(systemName: "figure.highintensity.intervaltraining")
+                      .resizable()
+                      .aspectRatio(contentMode: .fit)
+                      .frame(width: 100, height: 100)
+                      .foregroundColor(.accentColor)
+                      .padding()
+                
+                Text("人体姿态扫描仪")
+                      .font(.title)
+                      .padding()
+                Text("使用iPhone的相机检测人体姿态，并通过增强现实可视化，让人体姿态栩栩如生。")
+                      .padding()
+                
+
+                }
+                VStack {
+                    Spacer()
+                    NavigationLink(destination: ArView(), label: {Text("开始").frame(width: 200, height: 50)})
+                        .buttonStyle(.borderedProminent)
+                        .cornerRadius(50)
+                        .font(.title3)
+                        .padding()
+                    }
+            }
         }
       }
-    }
 }
 
 #Preview {
-    SwiftUIView()
+    StartView()
 }

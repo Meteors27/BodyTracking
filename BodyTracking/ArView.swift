@@ -7,12 +7,9 @@
 
 import SwiftUI
 
-struct ARView: View {
+struct ArView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ARViewContainer()
+            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
-}
-
-#Preview {
-    ARView()
 }
