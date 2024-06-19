@@ -29,7 +29,7 @@ struct StartView: View {
                 }
                 VStack {
                     Spacer()
-                    NavigationLink(destination: ArView(), label: {Text("开始").frame(width: 200, height: 50)})
+                    NavigationLink(destination: SkeletonView(), label: {Text("开始").frame(width: 200, height: 50)})
                         .buttonStyle(.borderedProminent)
                         .cornerRadius(50)
                         .font(.title3)
