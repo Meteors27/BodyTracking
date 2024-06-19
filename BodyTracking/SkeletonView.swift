@@ -21,8 +21,8 @@ struct SkeletonView: View {
                     isPaused.toggle()
                 }) {
                     HStack {
-                        Image(systemName: isPaused ? "pause" : "play")
-                        Text(isPaused ? "暂停" : "开始")
+                        Image(systemName: !isPaused ? "pause" : "play")
+                        Text(!isPaused ? "暂停" : "开始")
                     }
                     .frame(width: 180, height: 40)
                 }
