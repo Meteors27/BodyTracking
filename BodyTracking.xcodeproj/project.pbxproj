@@ -15,6 +15,7 @@
 		3D5488592C230360004DF032 /* SkeletonJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5488582C230360004DF032 /* SkeletonJoint.swift */; };
 		3D54885B2C230394004DF032 /* SkeletonBone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54885A2C230394004DF032 /* SkeletonBone.swift */; };
 		3D54885D2C2304BF004DF032 /* Bones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54885C2C2304BF004DF032 /* Bones.swift */; };
+		3D54885F2C230815004DF032 /* BodySkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54885E2C230815004DF032 /* BodySkeleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		3D5488582C230360004DF032 /* SkeletonJoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonJoint.swift; sourceTree = "<group>"; };
 		3D54885A2C230394004DF032 /* SkeletonBone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonBone.swift; sourceTree = "<group>"; };
 		3D54885C2C2304BF004DF032 /* Bones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bones.swift; sourceTree = "<group>"; };
+		3D54885E2C230815004DF032 /* BodySkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySkeleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				3D5488582C230360004DF032 /* SkeletonJoint.swift */,
 				3D54885A2C230394004DF032 /* SkeletonBone.swift */,
 				3D54885C2C2304BF004DF032 /* Bones.swift */,
+				3D54885E2C230815004DF032 /* BodySkeleton.swift */,
 				3D5488562C230259004DF032 /* ARViewContainer.swift */,
 				3D54884C2C2301BE004DF032 /* Assets.xcassets */,
 				3D54884E2C2301BE004DF032 /* Preview Content */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D54885F2C230815004DF032 /* BodySkeleton.swift in Sources */,
 				3D54884B2C2301BA004DF032 /* ContentView.swift in Sources */,
 				3D54885D2C2304BF004DF032 /* Bones.swift in Sources */,
 				3D54885B2C230394004DF032 /* SkeletonBone.swift in Sources */,
