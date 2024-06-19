@@ -11,6 +11,10 @@
 		3D54884B2C2301BA004DF032 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54884A2C2301BA004DF032 /* ContentView.swift */; };
 		3D54884D2C2301BE004DF032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D54884C2C2301BE004DF032 /* Assets.xcassets */; };
 		3D5488502C2301BE004DF032 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D54884F2C2301BE004DF032 /* Preview Assets.xcassets */; };
+		3D5488572C230259004DF032 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5488562C230259004DF032 /* ARViewContainer.swift */; };
+		3D5488592C230360004DF032 /* SkeletonJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5488582C230360004DF032 /* SkeletonJoint.swift */; };
+		3D54885B2C230394004DF032 /* SkeletonBone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54885A2C230394004DF032 /* SkeletonBone.swift */; };
+		3D54885D2C2304BF004DF032 /* Bones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54885C2C2304BF004DF032 /* Bones.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		3D54884A2C2301BA004DF032 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3D54884C2C2301BE004DF032 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D54884F2C2301BE004DF032 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3D5488562C230259004DF032 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		3D5488582C230360004DF032 /* SkeletonJoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonJoint.swift; sourceTree = "<group>"; };
+		3D54885A2C230394004DF032 /* SkeletonBone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonBone.swift; sourceTree = "<group>"; };
+		3D54885C2C2304BF004DF032 /* Bones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bones.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,10 @@
 			children = (
 				3D5488482C2301BA004DF032 /* BodyTrackingApp.swift */,
 				3D54884A2C2301BA004DF032 /* ContentView.swift */,
+				3D5488582C230360004DF032 /* SkeletonJoint.swift */,
+				3D54885A2C230394004DF032 /* SkeletonBone.swift */,
+				3D54885C2C2304BF004DF032 /* Bones.swift */,
+				3D5488562C230259004DF032 /* ARViewContainer.swift */,
 				3D54884C2C2301BE004DF032 /* Assets.xcassets */,
 				3D54884E2C2301BE004DF032 /* Preview Content */,
 			);
@@ -138,7 +150,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D54884B2C2301BA004DF032 /* ContentView.swift in Sources */,
+				3D54885D2C2304BF004DF032 /* Bones.swift in Sources */,
+				3D54885B2C230394004DF032 /* SkeletonBone.swift in Sources */,
 				3D5488492C2301BA004DF032 /* BodyTrackingApp.swift in Sources */,
+				3D5488572C230259004DF032 /* ARViewContainer.swift in Sources */,
+				3D5488592C230360004DF032 /* SkeletonJoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +291,7 @@
 				DEVELOPMENT_TEAM = VR46HVA3R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "这个应用需要相机权限以启用增强现实内容";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -285,7 +302,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = williamxia.BodyTracking;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.williamxia.apple-samplecode.RoomPlanExampleApp--SAMPLE-CODE-DISAMBIGUATOR-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -304,6 +321,7 @@
 				DEVELOPMENT_TEAM = VR46HVA3R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "这个应用需要相机权限以启用增强现实内容";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
