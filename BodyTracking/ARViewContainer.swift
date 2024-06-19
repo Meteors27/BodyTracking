@@ -34,6 +34,8 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func resumeARView() {
+        bodySkeletonAnchor.children.removeAll()
+        bodySkeleton = nil
         arView.session.run(ARBodyTrackingConfiguration())
     }
     
