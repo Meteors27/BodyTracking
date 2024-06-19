@@ -9,23 +9,26 @@ import SwiftUI
 import RealityKit
 
 struct SkeletonView: View {
-    @State private var shouldReset = false
+    @State private var isPaused = false
     
     var body: some View {
         ZStack {
-            ARViewContainer(resetFlag: $shouldReset)
+            ARViewContainer(pauseFlag: $isPaused)
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Spacer()
                 Button(action: {
-                    shouldReset.toggle() 
+                    isPaused.toggle()
                 }) {
-                    Text("Reset")
-                        .padding()
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                    HStack {
+                        Image(systemName: isPaused ? "pause" : "play")
+                        Text(isPaused ? "暂停" : "开始")
+                    }
+                    .frame(width: 180, height: 40)
                 }
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.capsule)
+                .font(.title3)
                 .padding()
             }
         }

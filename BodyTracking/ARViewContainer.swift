@@ -13,7 +13,7 @@ private var bodySkeleton: BodySkeleton?
 private let bodySkeletonAnchor = AnchorEntity()
 
 struct ARViewContainer: UIViewRepresentable {
-    @Binding var resetFlag: Bool
+    @Binding var pauseFlag: Bool
     let arView = ARView(frame: .zero, cameraMode: .ar, automaticallyConfigureSession: true)
     
     func makeUIView(context: Context) -> ARView {
@@ -23,18 +23,13 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
-        if resetFlag {
-            resetTracking(uiView)
-            resetFlag = false // Reset flag after handling
+        if pauseFlag {
+            bodySkeleton = nil
+            bodySkeletonAnchor.children.removeAll()
+            self.arView.session.pause() // Pause the AR session
+        } else {
+            self.arView.setupForBodyTracking() // Re-setup body tracking
         }
-    }
-    
-    private func resetTracking(_ arView: ARView) {
-        // Reset any tracking-related states or entities
-        bodySkeleton = nil
-        bodySkeletonAnchor.children.removeAll()
-        arView.session.pause() // Pause the AR session
-        arView.setupForBodyTracking() // Re-setup body tracking
     }
     
 }
