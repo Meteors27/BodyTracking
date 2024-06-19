@@ -24,14 +24,14 @@ struct ARViewContainer: UIViewRepresentable {
     
     func updateUIView(_ uiView: ARView, context: Context) {
         if pauseFlag {
-            bodySkeleton = nil
-            bodySkeletonAnchor.children.removeAll()
-            self.arView.session.pause() // Pause the AR session
+//            arView.session.pause()
         } else {
-            self.arView.setupForBodyTracking() // Re-setup body tracking
+//            arView.session.run(ARBodyTrackingConfiguration())
         }
     }
-    
+    static func dismantleUIView(_ uiView: ARView, coordinator: ()) {
+          uiView.session.pause()
+      }
 }
 
 extension ARView: ARSessionDelegate {
@@ -55,7 +55,3 @@ extension ARView: ARSessionDelegate {
         }
     }
 }
-
-
-
-
