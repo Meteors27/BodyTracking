@@ -16,6 +16,8 @@
 		3D54885B2C230394004DF032 /* SkeletonBone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54885A2C230394004DF032 /* SkeletonBone.swift */; };
 		3D54885D2C2304BF004DF032 /* Bones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54885C2C2304BF004DF032 /* Bones.swift */; };
 		3D54885F2C230815004DF032 /* BodySkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54885E2C230815004DF032 /* BodySkeleton.swift */; };
+		3DE3D40B2C2323DA008DAC55 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3D40A2C2323DA008DAC55 /* StartView.swift */; };
+		3DE3D40D2C232419008DAC55 /* ArView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3D40C2C232419008DAC55 /* ArView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		3D54885A2C230394004DF032 /* SkeletonBone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonBone.swift; sourceTree = "<group>"; };
 		3D54885C2C2304BF004DF032 /* Bones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bones.swift; sourceTree = "<group>"; };
 		3D54885E2C230815004DF032 /* BodySkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySkeleton.swift; sourceTree = "<group>"; };
+		3DE3D40A2C2323DA008DAC55 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		3DE3D40C2C232419008DAC55 /* ArView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 			children = (
 				3D5488482C2301BA004DF032 /* BodyTrackingApp.swift */,
 				3D54884A2C2301BA004DF032 /* ContentView.swift */,
+				3DE3D40C2C232419008DAC55 /* ArView.swift */,
+				3DE3D40A2C2323DA008DAC55 /* StartView.swift */,
 				3D5488582C230360004DF032 /* SkeletonJoint.swift */,
 				3D54885A2C230394004DF032 /* SkeletonBone.swift */,
 				3D54885C2C2304BF004DF032 /* Bones.swift */,
@@ -119,11 +125,12 @@
 			};
 			buildConfigurationList = 3D5488402C2301BA004DF032 /* Build configuration list for PBXProject "BodyTracking" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 3D54883C2C2301BA004DF032;
 			productRefGroup = 3D5488462C2301BA004DF032 /* Products */;
@@ -154,6 +161,8 @@
 			files = (
 				3D54885F2C230815004DF032 /* BodySkeleton.swift in Sources */,
 				3D54884B2C2301BA004DF032 /* ContentView.swift in Sources */,
+				3DE3D40D2C232419008DAC55 /* ArView.swift in Sources */,
+				3DE3D40B2C2323DA008DAC55 /* StartView.swift in Sources */,
 				3D54885D2C2304BF004DF032 /* Bones.swift in Sources */,
 				3D54885B2C230394004DF032 /* SkeletonBone.swift in Sources */,
 				3D5488492C2301BA004DF032 /* BodyTrackingApp.swift in Sources */,
@@ -295,6 +304,7 @@
 				DEVELOPMENT_TEAM = VR46HVA3R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BodyTracking/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "这个应用需要相机权限以启用增强现实内容";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -325,6 +335,7 @@
 				DEVELOPMENT_TEAM = VR46HVA3R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BodyTracking/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "这个应用需要相机权限以启用增强现实内容";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
