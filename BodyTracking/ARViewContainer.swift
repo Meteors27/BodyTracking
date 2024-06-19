@@ -13,25 +13,30 @@ private var bodySkeleton: BodySkeleton?
 private let bodySkeletonAnchor = AnchorEntity()
 
 struct ARViewContainer: UIViewRepresentable {
-    @Binding var pauseFlag: Bool
-    let arView = ARView(frame: .zero, cameraMode: .ar, automaticallyConfigureSession: true)
+    
+    @State private var arView = ARView(frame: .zero, cameraMode: .ar, automaticallyConfigureSession: true)
     
     func makeUIView(context: Context) -> ARView {
-        self.arView.setupForBodyTracking()
-        self.arView.scene.addAnchor(bodySkeletonAnchor)
-        return self.arView
+        arView.setupForBodyTracking()
+        arView.scene.addAnchor(bodySkeletonAnchor)
+        return arView
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
-        if pauseFlag {
-//            arView.session.pause()
-        } else {
-//            arView.session.run(ARBodyTrackingConfiguration())
-        }
     }
+    
     static func dismantleUIView(_ uiView: ARView, coordinator: ()) {
           uiView.session.pause()
-      }
+    }
+    
+    func pauseARView() {
+        arView.session.pause()
+    }
+    
+    func resumeARView() {
+        arView.session.run(ARBodyTrackingConfiguration())
+    }
+    
 }
 
 extension ARView: ARSessionDelegate {

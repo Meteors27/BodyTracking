@@ -10,14 +10,16 @@ import RealityKit
 
 struct SkeletonView: View {
     @State private var isPaused = false
+    @State private var arViewContainer = ARViewContainer()
     
     var body: some View {
         ZStack {
-            ARViewContainer(pauseFlag: $isPaused)
+            arViewContainer
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Spacer()
                 Button(action: {
+                    isPaused ? arViewContainer.resumeARView() : arViewContainer.pauseARView()
                     isPaused.toggle()
                 }) {
                     HStack {
