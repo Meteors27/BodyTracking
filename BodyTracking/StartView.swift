@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StartView: View {
+    @State private var selection = DisplayOption.skeleton
     var body: some View {
         NavigationStack {
             ZStack {
@@ -29,7 +30,13 @@ struct StartView: View {
                 }
                 VStack {
                     Spacer()
-                    NavigationLink(destination: SkeletonView(), label: {Text("开始").frame(width: 180, height: 40)})
+                    Picker("选择显示类型", selection: $selection) {
+                        ForEach(DisplayOption.allCases, id: \.self) { option in
+                            Text(option.rawValue)
+                                .frame(height: 40)
+                        }
+                    }
+                    NavigationLink(destination: SkeletonView(selection: selection), label: {Text("开始").frame(width: 180, height: 40)})
                         .buttonStyle(.borderedProminent)
                         .buttonBorderShape(.capsule)
                         .font(.title3)

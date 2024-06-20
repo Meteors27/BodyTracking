@@ -14,19 +14,21 @@ private var bodySkeleton: BodySkeleton?
 private let bodySkeletonAnchor = AnchorEntity()
 
 private var characterEntity: BodyTrackedEntity?
-private let characterOffset: SIMD3<Float> = [-1, 0, 0] // Offset the character by one meter to the left
 
 enum DisplayOption: String, CaseIterable {
     case skeleton = "骨架"
     case character = "机器人"
 }
 
+private var displayOption: DisplayOption?
+
 struct ARViewContainer: UIViewRepresentable {
-//    @Binding var selection: DisplayOption
-    
-    @State private var arView = ARView(frame: .zero, cameraMode: .ar, automaticallyConfigureSession: true)
+    var selection: DisplayOption
+    private let arView: ARView = ARView(frame: .zero, cameraMode: .ar, automaticallyConfigureSession: true)
     
     func makeUIView(context: Context) -> ARView {
+        print("make UI View")
+        
         arView.setupForBodyTracking()
         arView.scene.addAnchor(bodySkeletonAnchor)
         
@@ -49,6 +51,8 @@ struct ARViewContainer: UIViewRepresentable {
             }
         })
         
+        displayOption = selection
+        
         return arView
     }
     
@@ -56,7 +60,19 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     static func dismantleUIView(_ uiView: ARView, coordinator: ()) {
-          uiView.session.pause()
+        print("dismantle UI View")
+        
+//        bodySkeletonAnchor.children.removeAll()
+//        bodySkeleton?.isEnabled = false
+//        bodySkeleton?.joints.removeAll()
+//        bodySkeleton?.bones.removeAll()
+        bodySkeleton?.removeFromParent()
+        bodySkeleton = nil
+        characterEntity?.removeFromParent()
+        characterEntity = nil
+        uiView.session.delegate = nil
+        uiView.session.pause()
+        uiView.scene.anchors.removeAll()
     }
     
     func pauseARView() {
@@ -64,8 +80,8 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func resumeARView() {
-        bodySkeletonAnchor.children.removeAll()
-        bodySkeleton = nil
+//        bodySkeletonAnchor.children.removeAll()
+//        bodySkeleton = nil
         arView.session.run(ARBodyTrackingConfiguration())
     }
     
@@ -86,21 +102,24 @@ extension ARView: ARSessionDelegate {
             bodySkeletonAnchor.position = bodyPosition
             bodySkeletonAnchor.orientation = Transform(matrix: bodyAnchor.transform).rotation
             
-            if let skeleton = bodySkeleton {
-                skeleton.update(with: bodyAnchor)
-            } else {
-                bodySkeleton = BodySkeleton(for: bodyAnchor)
-                bodySkeletonAnchor.addChild(bodySkeleton!)
-            }
-   
-            if let character = characterEntity, character.parent == nil {
-                // Attach the character to its anchor as soon as
-                // 1. the body anchor was detected and
-                // 2. the character was loaded.
-                let offsetEntity = Entity()
-                offsetEntity.position = characterOffset
-                bodySkeletonAnchor.addChild(offsetEntity)
-                offsetEntity.addChild(character)
+            if displayOption == .skeleton {
+                if let skeleton = bodySkeleton {
+                    skeleton.update(with: bodyAnchor)
+                } else {
+                    bodySkeleton = BodySkeleton(for: bodyAnchor)
+                    bodySkeletonAnchor.addChild(bodySkeleton!)
+                }
+                characterEntity?.removeFromParent()
+                characterEntity = nil
+            } else if displayOption == .character {
+                if let character = characterEntity, character.parent == nil {
+                    // Attach the character to its anchor as soon as
+                    // 1. the body anchor was detected and
+                    // 2. the character was loaded.
+                    bodySkeletonAnchor.addChild(character)
+                }
+                bodySkeleton?.removeFromParent()
+                bodySkeleton = nil
             }
         }
     }
