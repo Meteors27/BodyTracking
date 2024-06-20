@@ -14,8 +14,8 @@
             filePath = "BodyTracking/ARViewContainer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "makeUIView(context:)"
             landmarkType = "7">
             <Locations>

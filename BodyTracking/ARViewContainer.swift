@@ -16,7 +16,13 @@ private let bodySkeletonAnchor = AnchorEntity()
 private var characterEntity: BodyTrackedEntity?
 private let characterOffset: SIMD3<Float> = [-1, 0, 0] // Offset the character by one meter to the left
 
+enum DisplayOption: String, CaseIterable {
+    case skeleton = "骨架"
+    case character = "机器人"
+}
+
 struct ARViewContainer: UIViewRepresentable {
+//    @Binding var selection: DisplayOption
     
     @State private var arView = ARView(frame: .zero, cameraMode: .ar, automaticallyConfigureSession: true)
     
