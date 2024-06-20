@@ -91,7 +91,10 @@ extension ARView: ARSessionDelegate {
                 // Attach the character to its anchor as soon as
                 // 1. the body anchor was detected and
                 // 2. the character was loaded.
-                bodySkeletonAnchor.addChild(character)
+                let offsetEntity = Entity()
+                offsetEntity.position = characterOffset
+                bodySkeletonAnchor.addChild(offsetEntity)
+                offsetEntity.addChild(character)
             }
         }
     }
