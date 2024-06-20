@@ -16,6 +16,7 @@
 		3D54885B2C230394004DF032 /* SkeletonBone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54885A2C230394004DF032 /* SkeletonBone.swift */; };
 		3D54885D2C2304BF004DF032 /* Bones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54885C2C2304BF004DF032 /* Bones.swift */; };
 		3D54885F2C230815004DF032 /* BodySkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54885E2C230815004DF032 /* BodySkeleton.swift */; };
+		3DD0E4EC2C2401A700852631 /* character in Resources */ = {isa = PBXBuildFile; fileRef = 3DD0E4EB2C2401A700852631 /* character */; };
 		3DE3D40B2C2323DA008DAC55 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3D40A2C2323DA008DAC55 /* StartView.swift */; };
 		3DE3D40D2C232419008DAC55 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3D40C2C232419008DAC55 /* SkeletonView.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		3D54885A2C230394004DF032 /* SkeletonBone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonBone.swift; sourceTree = "<group>"; };
 		3D54885C2C2304BF004DF032 /* Bones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bones.swift; sourceTree = "<group>"; };
 		3D54885E2C230815004DF032 /* BodySkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySkeleton.swift; sourceTree = "<group>"; };
+		3DD0E4EB2C2401A700852631 /* character */ = {isa = PBXFileReference; lastKnownFileType = folder; path = character; sourceTree = "<group>"; };
 		3DE3D40A2C2323DA008DAC55 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		3DE3D40C2C232419008DAC55 /* SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +67,7 @@
 		3D5488472C2301BA004DF032 /* BodyTracking */ = {
 			isa = PBXGroup;
 			children = (
+				3DD0E4EB2C2401A700852631 /* character */,
 				3D5488482C2301BA004DF032 /* BodyTrackingApp.swift */,
 				3D54884A2C2301BA004DF032 /* ContentView.swift */,
 				3DE3D40C2C232419008DAC55 /* SkeletonView.swift */,
@@ -147,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD0E4EC2C2401A700852631 /* character in Resources */,
 				3D5488502C2301BE004DF032 /* Preview Assets.xcassets in Resources */,
 				3D54884D2C2301BE004DF032 /* Assets.xcassets in Resources */,
 			);

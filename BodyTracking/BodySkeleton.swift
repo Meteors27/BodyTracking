@@ -16,6 +16,7 @@ class BodySkeleton: Entity {
     required init(for bodyAnchor: ARBodyAnchor) {
         super.init()
         
+        
         for jointName in ARSkeletonDefinition.defaultBody3D.jointNames {
             var jointRadius: Float = 0.05
             var jointColor: UIColor = .green
@@ -62,13 +63,12 @@ class BodySkeleton: Entity {
     }
     
     func update(with bodyAnchor: ARBodyAnchor) {
-        let rootPosition = simd_make_float3(bodyAnchor.transform.columns.3)
         
         for jointName in ARSkeletonDefinition.defaultBody3D.jointNames {
             if let jointEntity = joints[jointName],
                let jointEntityTransform = bodyAnchor.skeleton.modelTransform(for: ARSkeleton.JointName(rawValue: jointName)) {
                 let jointEntityOffsetFromRoot = simd_make_float3(jointEntityTransform.columns.3)
-                jointEntity.position = jointEntityOffsetFromRoot + rootPosition
+                jointEntity.position = jointEntityOffsetFromRoot
                 jointEntity.orientation = Transform(matrix: jointEntityTransform).rotation
             }
         }
@@ -80,7 +80,7 @@ class BodySkeleton: Entity {
             else { continue }
             
             entity.position = skeletonBone.centerPosition
-            entity.look(at: skeletonBone.toJoint.position, from: skeletonBone.centerPosition, relativeTo: nil)
+            entity.look(at: skeletonBone.toJoint.position, from: skeletonBone.centerPosition, relativeTo: self)
             
         }
     }
@@ -104,13 +104,9 @@ class BodySkeleton: Entity {
             return nil
         }
         
-        let rootPosition = simd_make_float3(bodyAnchor.transform.columns.3)
+        let jointFromEntityPosition = simd_make_float3(fromJointEntityTransform.columns.3)
         
-        let jointFromEntityOffsetFromRoot = simd_make_float3(fromJointEntityTransform.columns.3)
-        let jointFromEntityPosition = jointFromEntityOffsetFromRoot + rootPosition
-        
-        let jointToEntityOffsetFromRoot = simd_make_float3(toJointEntityTransform.columns.3)
-        let jointToEntityPosition = jointToEntityOffsetFromRoot + rootPosition
+        let jointToEntityPosition = simd_make_float3(toJointEntityTransform.columns.3)
         
         let fromJoint  = SkeletonJoint(name: bone.jointFromName, position: jointFromEntityPosition)
         let toJoint = SkeletonJoint(name: bone.jointToName, position: jointToEntityPosition)

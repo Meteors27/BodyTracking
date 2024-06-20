@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "E51AA72C-C46C-4BC0-9920-10E572B76F55"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE8DAB3E-88EA-4C46-BEDA-6323C132BD96"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BodyTracking/ARViewContainer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "makeUIView(context:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AE8DAB3E-88EA-4C46-BEDA-6323C132BD96 - bfd206e5e785df7f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BodyTracking.ARViewContainer.makeUIView(context: SwiftUI.UIViewRepresentableContext&lt;BodyTracking.ARViewContainer&gt;) -&gt; RealityKit.ARView"
+                  moduleName = "BodyTracking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/william/Documents/Xcode/BodyTracking/BodyTracking/ARViewContainer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "668">
+               </Location>
+               <Location
+                  uuid = "AE8DAB3E-88EA-4C46-BEDA-6323C132BD96 - 363deb5b4077ba6b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in BodyTracking.ARViewContainer.makeUIView(context: SwiftUI.UIViewRepresentableContext&lt;BodyTracking.ARViewContainer&gt;) -&gt; RealityKit.ARView"
+                  moduleName = "BodyTracking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/william/Documents/Xcode/BodyTracking/BodyTracking/ARViewContainer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "AE8DAB3E-88EA-4C46-BEDA-6323C132BD96 - 852f2c28ba86e604"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (RealityKit.Entity) -&gt; () in BodyTracking.ARViewContainer.makeUIView(context: SwiftUI.UIViewRepresentableContext&lt;BodyTracking.ARViewContainer&gt;) -&gt; RealityKit.ARView"
+                  moduleName = "BodyTracking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/william/Documents/Xcode/BodyTracking/BodyTracking/ARViewContainer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
